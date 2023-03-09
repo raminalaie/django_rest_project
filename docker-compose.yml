@@ -11,4 +11,4 @@ services:
 
     environment:
       - "DJANGO_SECRET_KEY='django-insecure-rfs7ycl5s9_bw87m)u2ndngnz)fbwr&o92v62wxs-zm#brcq#u'"
-      - "DJANGO_DEBUG=True"  
+      - "DJANGO_DEBUG=True"
