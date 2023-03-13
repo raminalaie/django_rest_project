@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
+from django.shortcuts import reverse
 # getting user model
 User = get_user_model()
 
