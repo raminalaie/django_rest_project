@@ -13,5 +13,6 @@ urlpatterns = [
     path("post_create/", views.PostCreateView.as_view(), name="post_create"),
     path("post/<int:pk>/edit/", views.PostEditView.as_view(), name="post_edit"),
     path("post/<int:pk>/delete/", views.PstDeleteView.as_view(), name="post_delete"),
+    path("api/v1/", include("blog.api.v1.urls")),
 
 ]
