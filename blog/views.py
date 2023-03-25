@@ -8,6 +8,9 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 
 class IndexView(LoginRequiredMixin, TemplateView):
     template_name = "indexs.html"
@@ -69,4 +72,6 @@ class PstDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = "/blog/post/"
 
 
-
+@api_view()
+def api_post_list_view(request):
+    return Response({"ok":"ali"})
