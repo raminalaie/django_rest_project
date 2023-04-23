@@ -9,6 +9,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticate
 from rest_framework.views import APIView
 from rest_framework.generics import ListCreateAPIView,RetrieveUpdateDestroyAPIView
 from rest_framework import viewsets
+from .permissions import IsOwnerOrReadOnly
 
 # @api_view(["GET","POST"])
 # @permission_classes([IsAuthenticated])
@@ -107,13 +108,13 @@ viewset
 
 class PostModelViewSet(viewsets.ModelViewSet):
         
-        permission_classes = [IsAuthenticated]
+        permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
         serializer_class = PostSerializers
         queryset = Post.objects.filter(status=True)
         
 class  CategoryModelViewSet(viewsets.ModelViewSet):
         
-        permission_classes = [IsAuthenticated]
+        permission_classes = [IsAuthenticated,IsOwnerOrReadOnly]
         serializer_class = CategorySerializer
         queryset = Category.objects.all()
         
